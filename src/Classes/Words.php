@@ -141,13 +141,9 @@ class Words
      */
     protected function prepareWord(string $word): string
     {
-        $preparedWord = str_replace(
-            ['sb', 'sb/sth', 'sth', 'sth/sb'],
-            ['somebody', 'somebody', 'something', 'something'],
-            $word
-        );
-
-        return trim($preparedWord);
+        $word = preg_replace('/\b([^ ]+)\/([^ ]+)\b/', '$1', $word);
+        $word = preg_replace('/\bsb\b/', 'somebody', $word);
+        return trim(preg_replace('/\bsth\b/', 'something', $word));
     }
 
     /**
