@@ -2,7 +2,7 @@
 
 A simple command which lets you convert words or phrases from CSV file's column into audio files using Google's translator.
 
-##Installation
+## Installation
 
 Run `./install.sh` and then copy the built file.
 
@@ -11,12 +11,12 @@ sudo cp -f ./build/csv-to-audio.phar /usr/local/bin/csv-to-audio
 sudo chmod a+x /usr/local/bin/csv-to-audio
 ``` 
 
-##Usage
+## Usage
 
 ```bash
 csv-to-audio file.csv
 ```
-####Available options
+#### Available options
 
    Option      | Short version | Meaning                                | Default
 -------------- | ------------- | -------------------------------------- | -------------------
