@@ -1,12 +1,11 @@
-#!/usr/bin/env php
 <?php
 
-require __DIR__.'/vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php';
 
 use App\Classes\Command;
 use Symfony\Component\Console\Application;
 
-define('COMMAND_DIR', __DIR__);
+define('COMMAND_DIR', getcwd());
 
 $application = new Application('csv-to-audio', '1.0.0');
 $command = new Command();
