@@ -153,7 +153,7 @@ class Words
     protected function prepareDestinationFile(string $word): string
     {
         $word = preg_replace('/\s+/', '_', strtolower($word));
-        $filename = preg_replace('/[^a-z0-9\._]/', '', $word);
+        $filename = preg_replace('/[^\-a-z0-9\._]/', '', $word);
         return $this->destinationPath . $filename . '.' . $this->translator->getFileExtension();
     }
 
