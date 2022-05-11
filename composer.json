@@ -7,20 +7,18 @@
     "prefer-stable": true,
     "authors": [
         {
-            "name": "Adam Lebioda",
-            "email": "adam@lebioda.co"
+            "name": "Adam Lebioda"
         }
     ],
     "require": {
         "php": "^7.1",
-        "symfony/console": "^4.0",
-        "symfony/filesystem": "^4.0",
-        "symfony/http-foundation": "^4.0",
-        "guzzlehttp/guzzle": "~6.0"
+        "symfony/console": "^5.4",
+        "symfony/filesystem": "^5.4",
+        "symfony/http-foundation": "^5.4",
+        "guzzlehttp/guzzle": "^7.4"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.1",
-        "roave/security-advisories": "dev-master"
+        "roave/security-advisories": "dev-latest"
     },
     "autoload": {
         "psr-4": {

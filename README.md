@@ -2,6 +2,14 @@
 
 A simple command which lets you convert words or phrases from CSV file's column into audio files using Google's translator.
 
+## Requirements
+
+PHP >= 7.1
+
+php.ini
+
+`phar.readonly = Off`
+
 ## Installation
 
 Run `./install.sh` and then copy the built file.
@@ -18,13 +26,13 @@ csv-to-audio file.csv
 ```
 #### Available options
 
-   Option      | Short version | Meaning                                | Default
--------------- | ------------- | -------------------------------------- | -------------------
-`--column`     | `-c`          | csv file column number (0 - indexed)   | 0
-`--delimiter`  | `-d`          | csv file delimiter                     | ,
-`--enclosure`  | `-e`          | csv file enclosure                     | "
-`--escape`     | `s`           | csv file escape                        | \
-`--translator` | `-t`          | translator (only Google for now)       | google
-`--language`   | `-l`          | language code                          | en
-`--destination`| `-f`          | destination directory                  | working directory
-`--overwrite`  | `-o`          | if overwrite existing files            | false
+| Option          | Short version | Meaning                              | Default           |
+|-----------------|---------------|--------------------------------------|-------------------|
+| `--column`      | `-c`          | csv file column number (0 - indexed) | 0                 |
+| `--delimiter`   | `-d`          | csv file delimiter                   | ,                 |
+| `--enclosure`   | `-e`          | csv file enclosure                   | "                 |
+| `--escape`      | `s`           | csv file escape                      | \                 |
+| `--translator`  | `-t`          | translator (only Google for now)     | google            |
+| `--language`    | `-l`          | language code                        | en                |
+| `--destination` | `-f`          | destination directory                | working directory |
+| `--overwrite`   | `-o`          | if overwrite existing files          | false             |
