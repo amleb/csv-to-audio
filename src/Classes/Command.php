@@ -19,6 +19,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 class Command extends ConsoleCommand
 {
     /**
+     * @var SymfonyStyle
+     */
+    protected $io;
+
+    /**
      * @return void
      */
     protected function configure(): void
@@ -44,10 +49,9 @@ class Command extends ConsoleCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $io = new SymfonyStyle($input, $output);
+        $this->io = new SymfonyStyle($input, $output);
 
         try {
-
             $words = new Words($this->getFile($input), $input->getOption('column'));
             $words->setTranslator($this->getTranslator($input))
                 ->setDestinationPath($input->getOption('destination'))
@@ -56,9 +60,8 @@ class Command extends ConsoleCommand
                 ->grabAudioFiles();
 
             $returnCode = 0;
-
         } catch (RuntimeException $e) {
-            $io->error($e->getMessage());
+            $this->io->error($e->getMessage());
             $returnCode = $e->getCode();
         }
 
@@ -71,14 +74,20 @@ class Command extends ConsoleCommand
      */
     protected function getFile(InputInterface $input): CsvFile
     {
-        $file = new CsvFile($input->getArgument('file'));
-        $file->setCsvControl(
+        $file = $input->getArgument('file');
+        if (!is_readable($file)) {
+            $this->io->error(sprintf('File "%s" doesn\'t exist or is not readable', $file));
+            exit;
+        }
+
+        $csvFile = new CsvFile($file);
+        $csvFile->setCsvControl(
             $input->getOption('delimiter'),
             $input->getOption('enclosure'),
             $input->getOption('escape')
         );
 
-        return $file;
+        return $csvFile;
     }
 
     /**
