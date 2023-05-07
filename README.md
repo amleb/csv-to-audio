@@ -1,10 +1,12 @@
 # csv-to-audio
 
 A simple command which lets you convert words or phrases from CSV file's column into audio files using Google's translator.
+I found it useful while creating language courses for myself in Memrise.
+Source file may be an XLSX spreadsheet as well, and it will be converted to CSV during the process.
 
 ## Requirements
 
-PHP >= 7.1
+PHP >= 7.4
 
 php.ini
 

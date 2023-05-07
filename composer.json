@@ -16,7 +16,8 @@
         "symfony/filesystem": "^5.4",
         "symfony/http-foundation": "^5.4",
         "guzzlehttp/guzzle": "^7.4",
-        "phpoffice/phpspreadsheet": "^1.28"
+        "phpoffice/phpspreadsheet": "^1.28",
+        "ext-fileinfo": "*"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest"

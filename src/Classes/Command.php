@@ -75,10 +75,6 @@ class Command extends ConsoleCommand
     protected function getFile(InputInterface $input): CsvFile
     {
         $file = $input->getArgument('file');
-        if (!is_readable($file)) {
-            $this->io->error(sprintf('File "%s" doesn\'t exist or is not readable', $file));
-            exit;
-        }
 
         $csvFile = new CsvFile($file);
         $csvFile->setCsvControl(
